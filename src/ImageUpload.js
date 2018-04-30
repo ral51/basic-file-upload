@@ -12,6 +12,7 @@ export class ImageUpload extends React.Component {
 
 	formSubmitHandler(evt) {
 		evt.preventDefault();
+		
 		var data = new FormData();
 		data.append("file", this.fileInput.files[0]);
 
@@ -27,7 +28,7 @@ export class ImageUpload extends React.Component {
 	render() {
 		return (
 			<div>
-				<form action="http://localhost:8000/upload" onSubmit={this.formSubmitHandler} >
+				<form onSubmit={this.formSubmitHandler} >
 					<input type="file" name="sampleFile" ref={el=>this.fileInput=el} />
 					<button type="submit">Submit</button>
 				</form>
