@@ -19,7 +19,6 @@ export class ImageUpload extends React.Component {
 		axios.post("http://localhost:8000/upload", data, { headers: { 'Content-Type': 'multipart/form-data' }
 		})
         .then(function (res) {
-        	alert('uploaded');  
         })
         .catch(function (err) {
         });
