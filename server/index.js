@@ -13,13 +13,15 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.post("/upload", function(req, res) {
+app.post("/formSubmit", function(req, res) {
   if (!req.files) {
     console.log("No files were uploaded.");
     return res.status(400).send("No files were uploaded.");
   }
 
-  var sampleFile = req.files.file;
+  console.log(req);
+
+  var sampleFile = req.files.sampleFile;
 
   sampleFile.mv("/tmp/file.png", function(err) {
     console.log("File uploaded.");
